@@ -16,13 +16,16 @@ function getComputerChoice() {
 	}
 }
 
-//Initialize counters for score and rounds 
-let computerScore = 0;
-let humanScore = 0;
-let roundsPlayed = 0
+
 
 //Game "loop"
 function playGame() {
+
+  //Initialize counters for score and rounds 
+  let computerScore = 0;
+  let humanScore = 0;
+  let roundsPlayed = 0
+
   //Round "loop"
   function playRound() {
   const human = getHumanChoice();
@@ -52,13 +55,13 @@ function playGame() {
   playRound();
   
   //Detemine overall winner
-  if (roundsPlayed === 5 && humanScore > computerScore) {
-    console.log('Game finished! You win!');
-  } else if (roundsPlayed === 5 && humanScore < computerScore) {
-    console.log('Game over! You lose!')
+  if (roundsPlayed === 5) {
+      if (humanScore > computerScore) {
+      console.log('Game finished! You win!');
+    } else if (humanScore < computerScore) {
+      console.log('Game over! You lose!');
+    } else {
+      console.log('Game finished! It\'s a tie!');
+    }
   }
-}
-
-
-
-  
+} 
